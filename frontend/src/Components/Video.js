@@ -22,21 +22,21 @@ export default function Video({ videos, isLoading, setIsLoading }) {
     
     // xs, sm, md, lg, and xl
     return (
-        < Box sx={{pt: 3, pl:{xs:12,sm:10,md:15},pr:{xs:7,sm:10,md:15}, bgcolor: color }}>
-            <Grid container spacing={2}>
+        // pt: 3, pl:{xs:12,sm:10,md:15},pr:{xs:7,sm:10,md:15},
+        < Box sx={{ bgcolor: color }}>
+            <Grid container spacing={2} sx={{m:5}} >
                 {
                     !isLoading ?
 
                         videos.map((value, key) => (
 
-                            <Grid item md={4} lg={3} sm={6} xs={12}>
+                            <Grid item md={4} lg={3} sm={6} xs={12} >
                                 <>
-                                    <Card sx={{borderRadius: 0, maxWidth: 275 }} style={{ backgroundColor: color }} >
-                                        <CardActionArea>
+                                    <Card sx={{borderRadius: 0 }} style={{ backgroundColor: color }} >
+                                        <CardActionArea  >
                                             <CardMedia
                                                 component="img"
                                                 image={value.previewImage}
-                                                sx={{ height: 140 }}
                                                 alt="green iguana"
                                                 id={value._id}
                                                 onClick={videoClicked}
